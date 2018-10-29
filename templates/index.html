@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Visualize Yosemite</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="static/css/style.css">
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://code.jquery.com/jquery-migrate-3.0.1.js"></script>
+  
+</head>
+
+<body>
+
+    <div class = "container-fluid">
+    
+    <!-- START: Rotating Images -->
+        <div id="rotating-item-wrapper">
+        
+              <div class="topimage">
+                <img src="{{url_for('static', filename='images/yosemite_1.jpg')}}" class="rotating-item" width="1200" height="200"/>
+                <img src="{{url_for('static', filename='images/yosemite_2.jpg')}}" class="rotating-item" width="1200" height="200"/>
+                <img src="{{url_for('static', filename='images/yosemite_3.jpg')}}" class="rotating-item" width="1200" height="200"/>
+                <img src="{{url_for('static', filename='images/yosemite_4.jpg')}}" class="rotating-item" width="1200" height="200"/>
+                <div class="centered"><h1>VISUALIZE YOSEMITE</h1>
+                    <p>A queer fellow and a jolly fellow is the grasshopper. Up the mountains he comes on excursions, how high I don't know,<br>but at least as far and high as Yosemite tourists.<br>-John Muir</p></div>
+              </div>
+            
+        </div>
+    </div>
+
+    <div class="row">   
+        <nav class="navbar-default">    
+            <div class="container">
+            <ul class="nav nav-justified pagination-lg">
+                <li><a href="/"><span class="glyphicon glyphicon-home" aria-hidden=true></span> Home</a></li>
+                <li><a href="/trails"><span class="glyphicon glyphicon-map-marker"></span>Hiking Trails</a></li>
+                <li><a href="/plots"><span class="glyphicon glyphicon-stats" ></span> Visitor Insights</a></li>
+                <li><a href="/analysis"><span class="glyphicon glyphicon-usd" ></span> Analysis</a></li>
+                <li><a href="/contact"><span class="glyphicon glyphicon-user" ></span> Team MAKVL</a></li>
+            </ul>
+            </div>
+        </nav>
+    </div>
+
+        <div class="container">
+        <div class="row margin-top-50">
+            <div class="col-md-12">
+                <h2 class="text-center">How do you impact the local community?</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row margin-top-50">
+
+            <div class="col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <img class="img-responsive" src="https://image.flaticon.com/icons/svg/146/146204.svg" class="img-rounded"> Today's Weather</div>
+                    <div id="weatherdata" class="panel-body"></div>
+                </div>
+                <br>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                            <img class="img-responsive" src="https://image.flaticon.com/icons/svg/491/491548.svg" class="img-rounded"> Tweet</div>
+                    <div id="tweetdata" class="panel-body"></div>
+                </div>
+                <br>
+                <div class="panel panel-default">
+                    <div class="panel-heading"><img class="img-responsive" src="https://www.flaticon.com/premium-icon/icons/svg/1187/1187645.svg" class="img-rounded"> Recent News</div>
+                    <div id="newsdata" class="panel-body"></div>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <div class="w3-content w3-display-container">
+                    <div class="mySlides">
+                        <img src="https://www.nps.gov/nature/customcf/NPS_Data_Visualization/images/OverviewImage001.jpg" style="width:100%">
+                        <div class="text">Over 300 million visitors travel to National Park Service sites across the US every year.</div>
+                    </div>
+                    <div class="mySlides">
+                        <img src="https://www.nps.gov/nature/customcf/NPS_Data_Visualization/images/OverviewImage002.jpg" style="width:100%">
+                        <div class="text">National Park Service visitors spend money in local communities. The sales, income and jobs resulting from these purchases represent the direct effects of visitor spending.</div>
+                    </div>
+                    <div class="mySlides">
+                        <img src="https://www.nps.gov/nature/customcf/NPS_Data_Visualization/images/OverviewImage003.jpg" style="width:100%">
+                        <div class="text">Additional jobs and economic activity are supported when businesses purchase supplies and services from other local businesses thus creating indirect effects of visitor spending.</div>
+                    </div>
+                    <div class="mySlides">
+                        <img src="https://www.nps.gov/nature/customcf/NPS_Data_Visualization/images/OverviewImage004.jpg" style="width:100%">
+                        <div class="text">Employees use their income to purchase goods and services in the local economy, generating further induced effects of visitor spending.</div>
+                    </div>
+                    
+                    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                    <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+                </div>
+                <br>
+                <div class="col-md-12">
+                    <h5>The sum of the indirect and induced effects give the secondary effects of visitor spending; and the sum of the direct and secondary effects give the total economic effect of visitor spending in a local economy.  Economic input-output models capture these complex interactions between producers and consumers in an economy and describe the secondary effects of visitor spending through regional economic multipliers.</h5>
+                    <h5>Economic contributions describe the gross economic activity associated with National Park visitor spending within a regional economy. Economic contributions can be interpreted as the relative magnitude and importance to regional economies of the economic activity generated through National Park visitor spending.</h4>
+                    <h5><i>Artwork by Shepherd Wolfe.</i></h5>
+                    <br>
+                    <img src="https://www.myyosemitepark.com/.image/c_limit%2Ccs_srgb%2Cq_auto:good%2Cw_700/MTUxMzk4NzQ3OTY2ODA5MzQz/yo-overview-map_700.webp" style="width:100%">
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+      <span class="bottom">Visualize Yosemite</span>
+    </footer>
+  </div>
+  
+  <!-- JS References -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.js"></script>
+  <script src="static/js/homepage_data.js"></script>
+  <script src="static/js/rotating.js"></script>
+
+</body>
+
+</html>
